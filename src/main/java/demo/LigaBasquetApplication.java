@@ -12,6 +12,7 @@ public class LigaBasquetApplication {
         ConfigurableApplicationContext context = SpringApplication.run(LigaBasquetApplication.class, args);
 
         JugadorService jugadorService = context.getBean(JugadorService.class);
+        jugadorService.testJugador();
 
     }
 }

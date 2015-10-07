@@ -1,14 +1,15 @@
 package demo.Model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
  * Created by david.casaoliva on 05/10/2015.
  */
+@Entity
 public class Jugador {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

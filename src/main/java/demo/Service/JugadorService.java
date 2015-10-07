@@ -67,8 +67,11 @@ public class JugadorService {
         jugador5.setPosicion("ala-pivot");
         jugadorRepository.save(jugador5);
 
+        System.out.println(jugadorRepository.findByNombreContaining("Pau"));
 
+        System.out.println(jugadorRepository.findByNumeroTotalCanastasGreaterThanEqual(100));
 
+        System.out.println(jugadorRepository.findByPosicionIs("base"));
 
 
     }
