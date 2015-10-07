@@ -71,7 +71,13 @@ public class JugadorService {
 
         System.out.println(jugadorRepository.findByNumeroTotalCanastasGreaterThanEqual(100));
 
+        System.out.println(jugadorRepository.findByNumeroTotalAsistenciasBetween(100,300));
+
         System.out.println(jugadorRepository.findByPosicionIs("base"));
+
+        System.out.println(jugadorRepository.findByFechaNacimientoBefore(new Date(321682400000L)));
+
+        System.out.println(jugadorRepository.findByFechaNacimientoBeforeAndNumeroTotalCanastasGreaterThanEqual(new Date(331682400000L),300));
 
 
     }
