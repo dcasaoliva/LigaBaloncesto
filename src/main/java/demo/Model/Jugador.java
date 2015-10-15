@@ -78,6 +78,14 @@ public class Jugador {
         this.posicion = posicion;
     }
 
+    public Equipo getEquipo() {
+        return equipo;
+    }
+
+    public void setEquipo(Equipo equipo) {
+        this.equipo = equipo;
+    }
+
     @Override
     public String toString() {
         return "Jugador{" +
@@ -87,10 +95,7 @@ public class Jugador {
                 ", numeroTotalCanastas=" + numeroTotalCanastas +
                 ", numeroTotalAsistencias=" + numeroTotalAsistencias +
                 ", numeroTotalRebotes=" + numeroTotalRebotes +
-                ", posicion='" + posicion + '\'' +
+                ", posicion='" + posicion + '\''+
                 '}';
     }
-
-
-
 }

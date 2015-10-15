@@ -68,7 +68,6 @@ public class Equipo {
                 ", nombre='" + nombre + '\'' +
                 ", localidad='" + localidad + '\'' +
                 ", fechaCreacion=" + fechaCreacion +
-                ", jugadores=" + jugadores +
                 '}';
     }
 }
