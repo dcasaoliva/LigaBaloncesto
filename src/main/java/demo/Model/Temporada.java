@@ -18,10 +18,10 @@ public class Temporada {
     private Date inicioTemp;
     private Date finalTemp;
 
-    @OneToMany(mappedBy = "liga")
-    private Set<Liga> ligas=new HashSet<>();
+    @ManyToOne
+    private Liga liga;
 
-    @ManyToMany (mappedBy = "equipo")
+    @ManyToMany
     private Set<Equipo> equipos=new HashSet<>();
 
     public Long getId() {
@@ -56,12 +56,12 @@ public class Temporada {
         this.finalTemp = finalTemp;
     }
 
-    public Set<Liga> getLigas() {
-        return ligas;
+    public Liga getLiga() {
+        return liga;
     }
 
-    public void setLigas(Set<Liga> ligas) {
-        this.ligas = ligas;
+    public void setLiga(Liga liga) {
+        this.liga = liga;
     }
 
     public Set<Equipo> getEquipos() {

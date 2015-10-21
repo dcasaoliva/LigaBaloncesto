@@ -10,4 +10,9 @@ public interface EquipoRepository extends PagingAndSortingRepository<Equipo, Lon
 
    Equipo findByNombre(String nombre);
 
+   Equipo findByLocalidad(String localidad);
+
+
+
+
 }

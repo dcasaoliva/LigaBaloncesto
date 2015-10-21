@@ -2,10 +2,13 @@ package demo.Service;
 
 import demo.Model.Equipo;
 import demo.Repository.EquipoRepository;
+import demo.Repository.JugadorRepository;
+import demo.Repository.TemporadaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -17,14 +20,20 @@ import java.util.Date;
 public class EquipoService {
 
     @Autowired
+    private JugadorRepository jugadorRepository;
+
+    @Autowired
     private EquipoRepository equipoRepository;
 
-    public void testEquipo(){
+    @Autowired
+    private TemporadaRepository temporadaRepository;
+
+    public void testEquipo() {
 
         Equipo equipo1 = new Equipo();
         equipo1.setNombre("FC Barcelona");
         equipo1.setLocalidad("Barcelona");
-        equipo1.setFechaCreacion(new Date(-2220573600000L));
+        equipo1.setFechaCreacion(new Date(-626835600000L));
         equipoRepository.save(equipo1);
 
         Equipo equipo2 = new Equipo();
@@ -56,10 +65,14 @@ public class EquipoService {
         equipo6.setLocalidad("Orlando");
         equipo6.setFechaCreacion(new Date(-626835600000L));
         equipoRepository.save(equipo6);
-    }
+
+
+        System.out.println(equipoRepository.findByLocalidad ("Orlando"));
 
 
 
 
+
+   }
 
 }

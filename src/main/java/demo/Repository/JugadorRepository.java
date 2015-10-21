@@ -23,6 +23,8 @@ public interface JugadorRepository extends  PagingAndSortingRepository<Jugador, 
 
     List<Jugador> findByFechaNacimientoBeforeAndNumeroTotalCanastasGreaterThanEqual (Date fechaNacimiento, int numeroTotalCanastas);
 
+    List<Jugador> findByEquipoNombre (String nombre);
+
 
 }
 

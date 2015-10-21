@@ -21,22 +21,43 @@ import java.util.Set;
 public class TemporadaService {
 
     @Autowired
-    private TemporadaRepository temporadaRepository;
-
-    @Autowired
-    private LigaRepository ligaRepository;
+    protected TemporadaRepository temporadaRepository;
 
     @Autowired
     private EquipoRepository equipoRepository;
 
+    @Autowired
+    private LigaRepository ligaRepository;
+
     public void testTemporada(){
 
         Temporada temporada1 = new Temporada();
-        temporada1.setNombre("Temporada 1");
+        temporada1.setNombre("Temporada ACB 2014-2015");
         temporada1.setInicioTemp(new Date(1409522400000L));
         temporada1.setFinalTemp(new Date(1404079200000L));
-        temporada1.setLigas((Set<Liga>) ligaRepository.findByNombre("Liga ACB"));
+        temporada1.setLiga(ligaRepository.findByNombre("Liga ACB"));
         temporadaRepository.save(temporada1);
+
+        Temporada temporada2 = new Temporada();
+        temporada2.setNombre("Temporada ACB 2015-2016");
+        temporada2.setInicioTemp(new Date(1404079200000L));
+        temporada2.setFinalTemp(new Date(1469829600000L));
+        temporada2.setLiga(ligaRepository.findByNombre("Liga ACB"));
+        temporadaRepository.save(temporada2);
+
+        temporada1.getEquipos().add(equipoRepository.findByNombre("FC Barcelona"));
+        temporada1.getEquipos().add(equipoRepository.findByNombre("Los Angeles Lakers"));
+        temporada1.getEquipos().add(equipoRepository.findByNombre("Cantabria Basquet Club"));
+        temporada1.getEquipos().add(equipoRepository.findByNombre("Buffalo Bulls"));
+        temporada1.getEquipos().add(equipoRepository.findByNombre("FC Bayern Basketball"));
+        temporada1.getEquipos().add(equipoRepository.findByNombre("Orlando Magic"));
+
+        temporada2.getEquipos().add(equipoRepository.findByNombre("FC Barcelona"));
+        temporada2.getEquipos().add(equipoRepository.findByNombre("Los Angeles Lakers"));
+        temporada2.getEquipos().add(equipoRepository.findByNombre("Cantabria Basquet Club"));
+        temporada2.getEquipos().add(equipoRepository.findByNombre("Buffalo Bulls"));
+        temporada2.getEquipos().add(equipoRepository.findByNombre("FC Bayern Basketball"));
+        temporada2.getEquipos().add(equipoRepository.findByNombre("Orlando Magic"));
 
 
     }

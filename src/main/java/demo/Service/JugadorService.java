@@ -340,7 +340,7 @@ public class JugadorService {
 
         System.out.println(jugadorRepository.findByFechaNacimientoBeforeAndNumeroTotalCanastasGreaterThanEqual(new Date(331682400000L),300));
 
-
+        System.out.println(jugadorRepository.findByEquipoNombre("FC Bayern Basketball"));
 
     }
 
