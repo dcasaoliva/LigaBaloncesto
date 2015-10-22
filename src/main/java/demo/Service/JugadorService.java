@@ -342,6 +342,8 @@ public class JugadorService {
 
         System.out.println(jugadorRepository.findByEquipoNombre("FC Bayern Basketball"));
 
+        System.out.println(jugadorRepository.findByEquipoLocalidad("Santander"));
+
     }
 
 }

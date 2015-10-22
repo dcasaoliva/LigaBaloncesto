@@ -25,6 +25,8 @@ public interface JugadorRepository extends  PagingAndSortingRepository<Jugador, 
 
     List<Jugador> findByEquipoNombre (String nombre);
 
+    List<Jugador> findByEquipoLocalidad (String localidad);
+
 
 }
 

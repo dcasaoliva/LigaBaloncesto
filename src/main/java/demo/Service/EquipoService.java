@@ -67,7 +67,10 @@ public class EquipoService {
         equipoRepository.save(equipo6);
 
 
-        System.out.println(equipoRepository.findByLocalidad ("Orlando"));
+        System.out.println(equipoRepository.findByLocalidad ("Santander"));
+
+
+
 
 
 
