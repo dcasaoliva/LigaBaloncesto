@@ -330,6 +330,7 @@ public class JugadorService {
 
         System.out.println(jugadorRepository.findByNombreContaining("Pau"));
 
+
         System.out.println(jugadorRepository.findByNumeroTotalCanastasGreaterThanEqual(100));
 
         System.out.println(jugadorRepository.findByNumeroTotalAsistenciasBetween(100,300));
@@ -340,10 +341,23 @@ public class JugadorService {
 
         System.out.println(jugadorRepository.findByFechaNacimientoBeforeAndNumeroTotalCanastasGreaterThanEqual(new Date(331682400000L),300));
 
+        System.out.println("jugadorRepository.findByEquipoNombre(\"FC Bayern Basketball\")");
         System.out.println(jugadorRepository.findByEquipoNombre("FC Bayern Basketball"));
 
+        System.out.println("jugadorRepository.findByEquipoLocalidad(\"Santander\")");
         System.out.println(jugadorRepository.findByEquipoLocalidad("Santander"));
 
+        System.out.println("jugadorRepository.findByEquipoNombreAndByPosicion(\"FC Barcelona\",\"alero\")");
+        System.out.println(jugadorRepository.findByEquipoNombreAndPosicion("FC Barcelona", "alero"));
+
+        System.out.println("jugadorRepository.findFirstByOrderByNumeroTotalCanastasDesc()");
+        System.out.println(jugadorRepository.findFirstByOrderByNumeroTotalCanastasDesc());
+
+        System.out.println("jugadorRepository.findFirst5ByOrderbyNumeroTotalAsistenciasDesc()");
+        System.out.println(jugadorRepository.findFirst5ByOrderByNumeroTotalAsistenciasDesc());
+
+        System.out.println("Buscar jugador de un equipo con mas numero de canastas");
+        System.out.println(jugadorRepository.findFirstNombreOrderByNumeroTotalCanastasFromEquipo("FC Barcelona"));
     }
 
 }

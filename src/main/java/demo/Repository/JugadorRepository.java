@@ -1,6 +1,8 @@
 package demo.Repository;
 
 import demo.Model.Jugador;
+import org.springframework.data.repository.query.Param;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.Date;
@@ -27,6 +29,14 @@ public interface JugadorRepository extends  PagingAndSortingRepository<Jugador, 
 
     List<Jugador> findByEquipoLocalidad (String localidad);
 
+    List<Jugador> findByEquipoNombreAndPosicion (String nombre, String posicion);
+
+    Jugador findFirstByOrderByNumeroTotalCanastasDesc();
+
+    List<Jugador> findFirst5ByOrderByNumeroTotalAsistenciasDesc();
+
+    @Query("SELECT j FROM Jugador j WHERE j.equipo.nombre = :nombre ORDER BY j.numeroTotalCanastas DESC")
+    List<Jugador> findFirstNombreOrderByNumeroTotalCanastasFromEquipo(@Param("nombre") String nombre);
 
 }
 

@@ -96,6 +96,8 @@ public class Jugador {
                 ", numeroTotalAsistencias=" + numeroTotalAsistencias +
                 ", numeroTotalRebotes=" + numeroTotalRebotes +
                 ", posicion='" + posicion + '\''+
+                ", localidadEquipo='" + this.equipo.getLocalidad() + '\''+
+                ", nombreEquipo='" + this.equipo.getNombre() + '\''+
                 '}';
     }
 }
