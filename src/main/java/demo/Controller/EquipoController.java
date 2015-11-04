@@ -16,7 +16,7 @@ import java.util.List;
  */
 
 @RestController //SIRVE PARA SABER QUE ES UN CONTROLADOR
-@RequestMapping("/equipo")  //URL RELATIVA PARA ACCEDER AL CONTROLADOR
+@RequestMapping("/equipos")  //URL RELATIVA PARA ACCEDER AL CONTROLADOR
 
 public class EquipoController {
 
@@ -32,14 +32,14 @@ public class EquipoController {
 
     @RequestMapping(method= RequestMethod.GET)
     public List<Equipo> findAll() {
-        List<Equipo> developers = new ArrayList<Equipo>();
+        List<Equipo> equipo = new ArrayList<Equipo>();
         Iterator<Equipo> iterator = equipoRepository.findAll().iterator();
 
         while (iterator.hasNext()) {
-            developers.add(iterator.next());
+            equipo.add(iterator.next());
         }
 
-        return developers;
+        return equipo;
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
