@@ -24,7 +24,7 @@ public class JugadorController {
     @Autowired
     private JugadorRepository jugadorRepository;
 
-    @RequestMapping (method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public Jugador save(@RequestBody Jugador jugador) {
         return jugadorRepository.save(jugador);
@@ -41,6 +41,7 @@ public class JugadorController {
 
         return jugadores;
     }
+
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Jugador getById(@PathVariable Long id) {
         Jugador jugador = jugadorRepository.findOne(id);
@@ -49,22 +50,9 @@ public class JugadorController {
 
         return jugador;
     }
-    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    public Jugador updateById(@PathVariable Long id, @RequestBody Jugador jugador) {
-        Jugador d1 = jugadorRepository.findOne(id);
 
-        if(d1 == null){throw new JugadorException("EL JUGADOR CON ID "+id+" NO EXISTE");}
 
-        return jugadorRepository.save(jugador);
-    }
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void deleteById(@PathVariable Long id) {
-        Jugador jugador = jugadorRepository.findOne(id);
 
-        if(jugador == null){throw new JugadorException("EL JUGADOR CON ID "+id+" NO EXISTE");}
-
-        jugadorRepository.delete(id);
-    }
 }
 
 

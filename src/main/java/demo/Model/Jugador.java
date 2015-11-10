@@ -1,5 +1,7 @@
 package demo.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -23,6 +25,7 @@ public class Jugador {
         return id;
     }
 
+    @JsonIgnore
     @ManyToOne
     private Equipo equipo;
 
@@ -96,8 +99,6 @@ public class Jugador {
                 ", numeroTotalAsistencias=" + numeroTotalAsistencias +
                 ", numeroTotalRebotes=" + numeroTotalRebotes +
                 ", posicion='" + posicion + '\''+
-                ", localidadEquipo='" + this.equipo.getLocalidad() + '\''+
-                ", nombreEquipo='" + this.equipo.getNombre() + '\''+
-                '}';
+               '}';
     }
 }

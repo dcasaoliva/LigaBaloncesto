@@ -1,5 +1,7 @@
 package demo.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
@@ -18,9 +20,11 @@ public class Equipo {
     private String localidad;
     private Date fechaCreacion;
 
+    @JsonIgnore
     @OneToMany (mappedBy = "equipo")
     private Set<Jugador> jugadores=new HashSet<>();
 
+    @JsonIgnore
     @ManyToMany (mappedBy = "equipos")
     private Set<Temporada> temporadas=new HashSet<>();
 

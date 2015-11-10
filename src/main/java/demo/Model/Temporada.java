@@ -1,5 +1,7 @@
 package demo.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
@@ -18,9 +20,11 @@ public class Temporada {
     private Date inicioTemp;
     private Date finalTemp;
 
+    @JsonIgnore
     @ManyToOne
     private Liga liga;
 
+    @JsonIgnore
     @ManyToMany
     private Set<Equipo> equipos=new HashSet<>();
 

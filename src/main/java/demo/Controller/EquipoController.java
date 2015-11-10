@@ -32,12 +32,21 @@ public class EquipoController {
 
     @RequestMapping(method= RequestMethod.GET)
     public List<Equipo> findAll() {
-        List<Equipo> equipo = new ArrayList<Equipo>();
+        List<Equipo> equipos = new ArrayList<Equipo>();
         Iterator<Equipo> iterator = equipoRepository.findAll().iterator();
 
         while (iterator.hasNext()) {
-            equipo.add(iterator.next());
+            equipos.add(iterator.next());
         }
+
+        return equipos;
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public Equipo getById(@PathVariable Long id) {
+        Equipo equipo = equipoRepository.findOne(id);
+
+        if(equipo == null){throw new EquipoException(id);}
 
         return equipo;
     }

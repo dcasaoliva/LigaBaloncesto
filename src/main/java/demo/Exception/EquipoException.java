@@ -1,7 +1,7 @@
 package demo.Exception;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
+        import org.springframework.http.HttpStatus;
+        import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
  * Created by poo2 on 30/06/2015.
