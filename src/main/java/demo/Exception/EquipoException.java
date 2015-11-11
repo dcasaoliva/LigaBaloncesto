@@ -8,6 +8,9 @@ package demo.Exception;
  */
 @ResponseStatus(value = HttpStatus.NOT_FOUND)
 public class EquipoException extends RuntimeException{
+    public EquipoException(String error){
+        super(error);
+    }
     public EquipoException(Long id) {
         super("NO EXIST EQUIPO WITH ID: "+ id);
     }

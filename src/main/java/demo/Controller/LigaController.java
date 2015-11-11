@@ -1,8 +1,6 @@
 package demo.Controller;
 
-import demo.Exception.JugadorException;
 import demo.Exception.LigaException;
-import demo.Model.Jugador;
 import demo.Model.Liga;
 import demo.Repository.LigaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
